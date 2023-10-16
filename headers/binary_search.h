@@ -6,21 +6,18 @@
 #define ALGORITHMS_BINARY_SEARCH_H
 #include <vector>
 
-int binary_search(int key, std::vector<int> a){
-    int hi = a.size();
+int binary_search(int key, std::vector<int> sorted_array){
+    int hi = sorted_array.size() - 1;
     int lo = 0;
-    std::cout << "hi:" << hi << std::endl;
-    std::cout << "lo:" << lo << std::endl;
 
     while (lo <= hi)
     {
         int mid = lo + (hi - lo) / 2;
-        std::cout << "mid:" << mid << std::endl;
-        if (key < a[mid])
+        if (key < sorted_array[mid])
         {
             hi = mid - 1;
         }
-        else if (key > a[mid])
+        else if (key > sorted_array[mid])
         {
             lo = mid + 1;
         }
